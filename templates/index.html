@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer News</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        {% for i in range(1, 6) %}
+            <div class="news-box">
+                <h2>Article {{ i }} Title</h2>
+                <img src="https://via.placeholder.com/150" alt="Thumbnail">
+                <p>Summary of Article {{ i }} goes here. This is a brief overview of the content.</p>
+                <a href="{{ url_for('article', id=i) }}">Read More</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
