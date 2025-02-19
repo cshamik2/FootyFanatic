@@ -1,8 +1,12 @@
 body {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
     font-family: 'Arial', sans-serif;
     background-color: #094088;
-    margin: 0;
+    height: 100vh;            /* Makes body take full height of viewport */
     padding: 20px;
+    margin: 0;                /* Removes default margin */
 }
 
 .container {
