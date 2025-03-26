@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <h1>Footy Fanatic Soccer News</h1>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('matches') }}">Matches</a>
+        <a href="{{ url_for('teams') }}">Teams</a>
+        <a href="{{ url_for('scores') }}">Scores</a>
+        <a href="#news">News</a>
+        <div class="sign-in-out">
+            <a href="#signin">Sign In</a>
+            <a href="#signout">Sign Out</a>
+        </div>
+    </div>
+    <h1>Upcoming Soccer Scores</h1>
+    <p>Here you can find information about upcoming soccer scores...</p>
+</body>
+</html>
