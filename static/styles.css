@@ -1,12 +1,12 @@
 body {
-    display: flex;
-    justify-content: center;  /* Centers horizontally */
+    /*display: flex;
+    justify-content: center; */ /* Centers horizontally */
     align-items: center;      /* Centers vertically */
     font-family: 'Arial', sans-serif;
-    background-color: #094088;
+    background-color: #aa3e3e;
     height: 100vh;            /* Makes body take full height of viewport */
     padding: 20px;
-    margin: 0;                /* Removes default margin */
+    margin: 10;                /* Removes default margin */
 }
 
 .container {
@@ -52,4 +52,46 @@ body {
 
 .news-box a:hover {
     background-color: #004494;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: rgb(252, 252, 252);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.sign-in-out {
+    float: right;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;  /* Ensures borders between cells are shared */
+    margin-top: 20px;           /* Optional: Adds some space above the table */
+    border: 2px solid black;    /* Adds a border around the entire table */
+}
+
+th, td {
+    border: 1px solid black;    /* Changes cell borders to black */
+    padding: 8px;               /* Adds padding inside each cell */
+    text-align: left;           /* Aligns text to the left */
+}
+
+th {
+    background-color: #fa0303;  /* Adds a background color to the header cells */
+    border-bottom: 2px solid rgb(2, 2, 2); /* Makes the bottom border of headers black */
+}
+
+tr:hover {
+    background-color: #ffffff;  /* Optional: Adds a hover effect on each row */
 }
