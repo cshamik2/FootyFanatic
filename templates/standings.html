@@ -44,19 +44,20 @@
 
     <h1>Premier League Standings</h1>
 
-    {% if table %}
-        <!-- Display your standings table here -->
+   {% if table %}
+    <!-- Display your standings table here -->
 
         <table border="1">
             <tr>
-                <th>#</th>
+                <th>Rank</th>
                 <th>Team</th>
                 <th>Points</th>
                 <th>Wins</th>
                 <th>Losses</th>
                 <th>Draws</th>
             </tr>
-            {% for team in standings %}
+        
+            {% for team in table %}
             <tr>
                 <td>{{ team.rank }}</td>
                 <td>
@@ -70,10 +71,11 @@
             </tr>
             {% endfor %}
         </table>
+
     {% else %}
     <div class="error-message">
         ❗ Sorry, Standings data is not available at the moment. Please try again later.
-      </div>
+    </div>
     {% endif %}
 
     
