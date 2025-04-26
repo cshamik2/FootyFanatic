@@ -16,24 +16,83 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+/* Make the whole carousel container centered and fixed size */
+.swiper {
+    width: 90%;
+    max-width: 800px;
+    height: 400px; /* Fixed height */
+    margin: 20px auto;
+}
+
+.news-swiper {
+    width: 90%;
+    max-width: 800px;
+    height: 400px; /* slightly smaller now without summary */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
 
 .news-box {
-    background-color: black;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-link img {
+    width: 100%;
+    height: 80%; /* Image takes 80% now */
+    object-fit: cover;
+}
+
+.news-text {
+    height: 20%; /* Only space for title */
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-text h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Image must fully fill the parent */
+.news-box img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover; /* Cover the container */
+    display: block;
+}
+
+/* Adjust Swiper navigation buttons */
+.swiper-button-next, .swiper-button-prev {
+    color: #0d0d0e;
+    width: 30px;
+    height: 30px;
 }
 
 .news-box:hover {
     transform: scale(1.05);
 }
-
-.news-box h2 {
-    color: #333;
-    font-size: 20px;
-}
-
 .news-box p {
     color: #666;
     font-size: 16px;
@@ -44,14 +103,42 @@ body {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #0056b3;
+    background-color: #376da7;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .news-box a:hover {
-    background-color: #004494;
+    background-color: #2d5480;
+}
+
+.news-preview, .match-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.news-link {
+    display: block;
+    width: 100%;
+}
+
+/* Optional hover effect */
+.news-link:hover img {
+    opacity: 0.85;
+}
+
+/* Make the summary one-line and cut overflow */
+.news-summary {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #070707;
+    margin-top: 8px;
 }
 
 .navbar {
@@ -74,24 +161,230 @@ body {
     float: right;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;  /* Ensures borders between cells are shared */
-    margin-top: 20px;           /* Optional: Adds some space above the table */
-    border: 2px solid black;    /* Adds a border around the entire table */
+.league-section {
+    background: #fff;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 750px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-th, td {
-    border: 1px solid black;    /* Changes cell borders to black */
-    padding: 8px;               /* Adds padding inside each cell */
-    text-align: left;           /* Aligns text to the left */
+.league-section h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #0056b3;
 }
 
-th {
-    background-color: #fa0303;  /* Adds a background color to the header cells */
-    border-bottom: 2px solid rgb(2, 2, 2); /* Makes the bottom border of headers black */
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 
-tr:hover {
-    background-color: #ffffff;  /* Optional: Adds a hover effect on each row */
+.team {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the team cards */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Each team card */
+.team-card {
+    background: #fff;
+    width: 200px;
+    padding: 15px;
+    text-align: center; /* CENTER everything inside the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* The team logo image */
+.team-logo-large {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* The team name */
+.team-card h3 {
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+    text-align: center; /* Just to be sure */
+}
+
+/* Stadium name under the team name */
+.team-card p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* General swiper container for matches */
+.match-swiper {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    height: auto; /* Let it fit content */
+}
+
+/* Control the swiper-wrapper for match swiper */
+.match-swiper .swiper-wrapper {
+    height: auto; /* Remove default huge height */
+    display: flex;
+    align-items: center; /* Center slides vertically */
+}
+
+/* Match-box style */
+.match-box {
+    background: #fff;
+    width: 280px;
+    min-height: 140px; /* Small height for match cards */
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Inside match-box text */
+.match-box p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.match-time {
+    font-size: 14px;
+    color: #007d00;
+    margin-top: 4px;
+}
+
+/* Images inside match box (e.g., team logos) */
+.match-box img {
+    width: 50px;      /* Control the size of the logo */
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.match-box:last-child {
+    border-bottom: none;
+}
+
+/* Center all "View All" links */
+.view-all-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Add a little hover effect */
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #070707;
+}
+
+.back-home {
+    text-align: center; /* Center anything inside */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.back-home a {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+
+.back-home a:hover {
+    text-decoration: underline;
+}
+.scorer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* CENTER all the scorer cards */
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.scorer-card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.scorer-card h2 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.scorer-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.disabled-link {
+    pointer-events: none;  /* Cannot click */
+    color: gray;           /* Gray color */
+    text-decoration: none; /* No underline */
+    opacity: 0.6;           /* Light transparent */
+}
+
+.error-message {
+    text-align: center;
+    color: rgb(229, 255, 0);
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px;
 }
