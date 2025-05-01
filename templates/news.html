@@ -11,7 +11,14 @@
     <!-- Navbar -->
 
     <div class="navbar">
-   
+        <!--
+            {% if session.get('signed_in') %}
+                <a href="{{ url_for('matches') }}">Matches</a>
+            {% else %}
+                <a class="disabled-link">Matches</a>
+            {% endif %}
+        -->
+       
             <!-- User is signed in: All links enabled -->
             <a href="{{ url_for('home') }}">Home</a>
             <a href="{{ url_for('news') }}">News</a>
@@ -21,7 +28,7 @@
             <a href="{{ url_for('topscorers') }}">Top Scorers</a>
             <a href="{{ url_for('standings') }}">Standings</a>
        
-       
+
     
         <!-- Sign in/out links -->
         <div class="sign-in-out">
@@ -76,23 +83,23 @@
         </div>
 
         <div class="news-box">
-            <img src="https://www.theguardian.com/football/live/2025/mar/02/manchester-united-v-fulham-fa-cup-fifth-round-live#img-1" alt="Man United vs Fulham">
+            <img src="https://i.guim.co.uk/img/media/8bf86d3b28f436238c90b70652e90bcc6ece2624/243_506_4876_2926/master/4876.jpg?width=465&dpr=1&s=none&crop=none" alt="Man United vs Fulham">
             <h2>Manchester United Say Goodbye to FA Cup</h2>
             <p>Fulham eliminates Manchester United in the FA Cup 5th round with a surprise win at Old Trafford.</p>
             <a href="{{ url_for('article', id=6) }}">Read More</a>
         </div>
 
         <div class="news-box">
-            <img src="https://resources.premierleague.pulselive.com/photo-resources/2025/04/20/a45444d9-d65b-44c4-ab56-3606e6a96e67/When-can-Liverpool-win-title-v3.jpg" alt="Liverpool Title">
+            <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_4000,h_2666,x_0,y_0/c_fill,w_620,ar_3:2,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/real_madrid_cf_on_si/01js06tyt7wdn7chdyae.jpg" alt="Liverpool Title">
             <h2>Real Madrid Eliminated from UCL by Arsenal</h2>
             <p>Real Madrid lose 5-1 on aggregate to Arsenal, ending their Champions League hopes.</p>
             <a href="{{ url_for('article', id=7) }}">Read More</a>
         </div>
 
         <div class="news-box">
-            <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_4000,h_2666,x_0,y_0/c_fill,w_620,ar_3:2,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/real_madrid_cf_on_si/01js06tyt7wdn7chdyae.jpg" alt="Real Madrid">
-            <h2>Real Madrid Face End of an Era After UCL Loss</h2>
-            <p>Real Madrid's dominance fades as they bow out of the UCL following a poor season finale.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGspfizzTVpjtJEL33MjCXQr9PCUovgQwXMA&s" alt="Liverpool">
+            <h2>Liverpool are Champions of England!!!</h2>
+            <p>No one predicted this to happen. Liverpool were written off by pretty much everybody, the media, the pundits, and their own fans doubted them.</p>
             <a href="{{ url_for('article', id=8) }}">Read More</a>
         </div>
     </div>
